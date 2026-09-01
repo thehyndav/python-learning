@@ -1,3 +1,3 @@
 print("Hello, AI Engineering!")
-print(2 + 5)
-print("Iam an idiot")
+print(2 + 10)
+print("Iam an idiot") 
