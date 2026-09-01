@@ -1,0 +1,408 @@
+class Student:
+    pass
+
+
+student1 = Student()
+
+student1.name = "Rahul"
+student1.age = 21
+student1.course = "Python"
+
+print(student1.name)
+print(student1.age)
+print(student1.course)
+
+student2 = Student()
+
+student2.name = "Priya"
+student2.age = 22
+student2.course = "SQL"
+
+print(student2.name)
+print(student2.age)
+print(student2.course)
+
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def describe(self):
+        print(f"{self.brand} {self.model}, {self.year}")
+    
+    def greet(self, person):
+        print(f" {self.brand} says: Hello, {person}!")
+
+
+car1 = Car("Toyota", "Camry", 2024)
+car2 = Car("Honda", "Civic", 2023)
+car1.describe() 
+car2.describe()
+car1.greet("Rahul")
+car2.greet("Priya")
+
+class Student:
+    def __init__(self, name, age, course):
+        self.name = name
+        self.age = age
+        self.course = course
+
+    def describe(self):
+        print(f"{self.name} is {self.age} years old and is enrolled in the course {self.course}.")
+student1 = Student("Rahul", 22, "IT")
+student2 = Student("Rani", 22, "CS")
+
+print(student1.name)
+print(student1.age)
+print(student1.course)
+
+print(student2.name)
+print(student2.age)
+print(student2.course)
+
+student1.describe()
+student2.describe()
+
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+
+    def describe(self):
+        print(f"The book {self.title} was written by {self.author} in {self.year}.")
+
+Book1 = Book("Harry Potter", "J.K. Rowling", 1997)
+Book2 = Book("The Alchemist", "Paulo Coelho", 1988)
+
+print(Book1.title)
+print(Book1.author)
+print(Book1.year)
+print(Book2.title)
+print(Book2.author)
+print(Book2.year)
+
+Book1.describe()
+Book2.describe()
+
+#inheritance
+
+class Animal:
+    def eat(self):
+        print("This animal is eating.")
+
+class Dog(Animal):
+    def bark(self):
+        print("Woof!")
+
+dog1 = Dog()
+dog1.eat()
+dog1.bark()
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+class Student(Person):
+    def __init__(self, name, age, course):
+        super().__init__(name, age)
+        self.course = course
+
+student1 = Student("Ravi", 21, "Computer Science")
+
+print(student1.name)
+print(student1.age)
+print(student1.course)
+
+
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+class Car(Vehicle):
+    def __init__(self, brand, model, doors):
+        super().__init__(brand, model)
+        self.doors = doors
+
+car1 = Car("Toyota", "Camry", 4)
+print(car1.brand)
+print(car1.model)
+print(car1.doors)
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+class Manager(Employee):
+    def __init__(self, name, salary, team_size):
+        super().__init__(name, salary)
+        self.team_size = team_size 
+
+manager1 = Manager("sri", 50000, 10)
+print(manager1.name)
+print(manager1.salary)
+print(manager1.team_size)
+
+class Employee:
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def work(self):
+        print("Employee is working")
+
+
+class Manager(Employee):
+
+    def __init__(self, name, salary, team_size):
+        super().__init__(name, salary)
+        self.team_size = team_size
+
+    def work(self):
+        super().work()
+        print("Manager is managing the team")
+
+manager1 = Manager("Rahul", 60000, 5)
+manager1.work()
+
+print(manager1.name)
+print(manager1.salary)
+print(manager1.team_size)
+
+class Animal:
+    def speak(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog says Woof!")
+
+dog1 = Dog()
+dog1.speak()  
+
+class Vehicle:
+    def start(self):
+        print("Vehicle is starting")
+
+class Car(Vehicle):
+    def start(self):
+        super().start()
+        print("Car engine is starting")
+
+car1 = Car()
+car1.start()
+
+class Student:
+    def __init__(self, marks):
+        self.__marks = marks
+
+    def get_marks(self):
+        return self.__marks
+
+    def update_marks(self, new_marks):
+        if 0 <= new_marks <= 100:
+            self.__marks = new_marks
+
+student1 = Student(85)
+print(student1.get_marks())
+student1.update_marks(90)
+print(student1.get_marks()) 
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount 
+
+account1 = BankAccount(10000)
+print(account1.get_balance())
+account1.deposit(5000)
+print(account1.get_balance())
+account1.withdraw(3000)
+print(account1.get_balance())
+account1.withdraw(20000)
+print(account1.get_balance())
+
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.__marks = marks
+
+    # Getter
+    def get_marks(self):
+        return self.__marks
+
+    # Setter
+    def set_marks(self, marks):
+        if 0 <= marks <= 100:
+            self.__marks = marks
+        else:
+            print("Invalid marks")
+
+
+student1 = Student("Rahul", 85)
+
+print(student1.get_marks())
+
+student1.set_marks(90)
+
+print(student1.get_marks())
+
+student1.set_marks(150)
+
+print(student1.get_marks())
+
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.__price = price
+
+    def get_price(self):
+        return self.__price 
+
+    def set_price(self, price):
+        if price > 0:
+            self.__price = price
+        else:
+            print("Invalid price")
+
+product1 = Product("Laptop", 50000)
+print(product1.get_price())
+product1.set_price(45000)
+print(product1.get_price())
+product1.set_price(-1000)
+print(product1.get_price())
+
+class Dog:
+    def speak(self):
+        print("Dog says Woof!")
+
+
+class Cat:
+    def speak(self):
+        print("Cat says Meow!")
+
+
+dog1 = Dog()
+cat1 = Cat()
+
+dog1.speak()
+cat1.speak()
+
+
+class Dog:
+    def speak(self):
+        print("Woof!")
+
+
+class Cat:
+    def speak(self):
+        print("Meow!")
+
+class Cow:
+    def speak(self):
+        print("Moo!")
+
+
+
+animals = [Dog(), Cat(), Cow()]
+
+for animal in animals:
+    animal.speak()
+
+
+class Car:
+    def start(self):
+        print("car engine starts")
+
+class Bike:
+    def start(self):
+        print("bike engine starts")
+
+class Bus:
+    def start(self):
+        print("bus engine starts")
+
+vehicles = [Car(), Bike(), Bus()]
+
+for vehicle in vehicles:
+    vehicle.start()
+
+
+class CreditCard:
+    def pay(self):
+        print("credit card payment")
+
+class UPI:
+    def pay(self):
+        print("UPI payment")
+
+class Cash:
+    def pay(self):
+        print("cash payment")
+
+payments = [CreditCard(), UPI(), Cash()]
+
+for payment in payments:
+    payment.pay()
+
+class Animal:
+    def speak(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog says Woof!")
+
+class Cat(Animal):
+    def speak(self):
+        print("Cat says Meow!")
+
+animals = [Dog(), Cat()]
+
+for animal in animals:
+    animal.speak()
+
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        import math
+        return math.pi * self.radius ** 2
+
+Rectangle1 = Rectangle(10,5)
+Circle1 = Circle(5)
+print(Rectangle1.area())
+print(Circle1.area()) 
