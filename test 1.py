@@ -1,3 +1,4 @@
 print("Hello, AI Engineering!")
 print(2 + 10)
 print("Iam an idiot") 
+print("Learning Git and GitHub")
