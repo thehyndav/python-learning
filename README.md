@@ -8,3 +8,4 @@ My Python learning journey.
 - Object-Oriented Programming
 - Git
 - GitHub
+- Learning GitHub Pull Requests
